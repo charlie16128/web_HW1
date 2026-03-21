@@ -49,21 +49,23 @@ setInterval(() => {
         if (currentBlock < 10) {
             blocks[currentBlock].classList.add('active');
             currentBlock++;
-            loadingText.innerText = `載入中...${currentBlock * 10}%`;
+            loadingText.innerText = `等待重試...${currentBlock * 10}%`;
+            
         }
         if (currentBlock === 10) {
             blocks.forEach(block => block.classList.add('error'));
-            loadingText.innerText = "讀取失敗";
-            loadingText.style.color = "#f44336";
+            loadingText.innerText = "重新整理中";
+            loadingText.style.color = "green";
             state = 'error';
         }
     } else if (state === 'error') {
         blocks.forEach(block => { block.classList.remove('active', 'error'); });
 
         currentBlock = 0;
-        loadingText.innerText = "載入中...0%";
+        loadingText.innerText = "等待重試...0%";
         loadingText.style.color = "white";
         state = 'loading';
-    }
+        location.reload();
 
-}, 1000);
+    }
+}, 250);
