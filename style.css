@@ -32,6 +32,12 @@ body{
 
 .loading-image{
     z-index: 1;
+    width: 250px;
+}
+
+#logo{
+    width: 125px; 
+    height: auto; 
 }
 
 .block{
@@ -57,6 +63,23 @@ body{
     color: white;
     font-size: 30px;
 }
+
+.error-details{
+    margin-top: 30px;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#message{
+    color: #eee;
+    font-size: 50px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
 
 
 

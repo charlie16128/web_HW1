@@ -1,10 +1,10 @@
 const logo = document.getElementById('logo');
 
-let x = Math.random() * (window.innerWidth - 150);
+let x = Math.random() * (window.innerWidth - 125);
 let y = Math.random() * (window.innerHeight - 50);
 let dx = 3;
 let dy = 3;
-const logoWidth = 270;
+const logoWidth = 125;
 let logoHeight = 0;
 
 function animate() {
