@@ -63,8 +63,8 @@ window.addEventListener('keydown', (e) => {
                 dy = 0;
                 is_pause = true;
             } else {
-                dx = (Math.random() > 0.5 ? 1 : -1) * speedX;
-                dy = (Math.random() > 0.5 ? 1 : -1) * speedY;
+                dx = (Math.random() > 0.5 ? 1 : -1);
+                dy = (Math.random() > 0.5 ? 1 : -1);
                 is_pause = false; 
             }
             
