@@ -49,7 +49,7 @@ setInterval(() => {
         if (currentBlock < 10) {
             blocks[currentBlock].classList.add('active');
             currentBlock++;
-            loadingText.innerText = `等待重試...${currentBlock * 10}%`;
+            loadingText.innerText = `等待重試...${10 - currentBlock}s`;
             
         }
         if (currentBlock === 10) {
@@ -65,7 +65,6 @@ setInterval(() => {
         loadingText.innerText = "等待重試...0%";
         loadingText.style.color = "white";
         state = 'loading';
-        location.reload();
-
+        // location.reload();
     }
-}, 250);
+}, 1000);
