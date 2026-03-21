@@ -39,6 +39,43 @@ window.addEventListener('mousedown', (e) => {
     }
 });
 
+let is_pause = false;
+window.addEventListener('keydown', (e) => {
+    const step = Math.random() * 2 + 2; 
+    
+
+    switch(e.key) {
+        case 'ArrowUp':
+            dy -= step;
+            break;
+        case 'ArrowDown':
+            dy += step;
+            break;
+        case 'ArrowLeft':
+            dx -= step;
+            break;
+        case 'ArrowRight':
+            dx += step;
+            break;
+        case ' ': 
+            if (!is_pause) {
+                dx = 0;
+                dy = 0;
+                is_pause = true;
+            } else {
+                dx = (Math.random() > 0.5 ? 1 : -1) * speedX;
+                dy = (Math.random() > 0.5 ? 1 : -1) * speedY;
+                is_pause = false; 
+            }
+            
+            break;
+    }
+    
+    const maxSpeed = 10;
+    dx = Math.max(-maxSpeed, Math.min(maxSpeed, dx));
+    dy = Math.max(-maxSpeed, Math.min(maxSpeed, dy));
+});
+
 const blocks = document.querySelectorAll('.block');
 const loadingText = document.getElementById('loading-text');
 let currentBlock = 0;
