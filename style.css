@@ -21,20 +21,16 @@ body {
     user-select: none;
 }
 
-.yt-header {
-    width: 100%;
-    padding: 15px 0;
-    display: flex;
-    justify-content: center;
-    z-index: 10;
-}
-
 .search-box {
     display: flex;
     align-items: center;
     width: 40%;
     min-width: 300px;
+    max-width: 600px;
     height: 40px;
+    margin: 15px 0; 
+    z-index: 10;    
+    margin-top: 30px;
     border: 1px solid #303030;
     border-radius: 20px;
     background-color: #121212;
@@ -140,7 +136,7 @@ body {
     max-width: 1000px;
     padding: 20px 40px 100px 40px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 均分成三個直排 */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     z-index: 10;
 }
