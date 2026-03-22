@@ -151,7 +151,7 @@ body {
     gap: 12px;
 }
 
-.thumbnail {
+.video-blackscreen {
     width: 100%;
     aspect-ratio: 16 / 9;
     background-color: #1a1a1a;
