@@ -1,23 +1,103 @@
-body{
+body {
     background-color: gray;
-    width: 100vw; 
-    height: 100vh; 
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+}
 
+#logo {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 125px; 
+    height: auto; 
+    z-index: 1;
+    user-select: none;
+}
+
+.yt-header {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    min-width: 300px;
+    height: 40px;
+    border: 1px solid #303030;
+    border-radius: 20px;
+    background-color: #121212;
     overflow: hidden;
 }
 
-.loading-container{
+.search-box input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 0 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-btn {
+    width: 64px;
+    height: 100%;
+    background-color: #222222;
+    border: none;
+    border-left: 1px solid #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 10;
+}
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+.error-details {
+    margin-top: 30px;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#message {
+    color: #eee;
+    font-size: 50px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 80px;      
+    height: 80px;
+    border: 8px solid rgba(255, 255, 255, 0.3); 
+    border-top: 8px solid #ffffff;             
+    border-radius: 50%;                         
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px; 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .progress-bar {
@@ -28,32 +108,9 @@ body{
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.2); 
     z-index: 1;
-
 }
 
-.loading-spinner {
-    width: 80px;      
-    height: 80px;
-    border: 8px solid rgba(255, 255, 255, 0.3); 
-    border-top: 8px solid #ffffff;             
-    border-radius: 50%;                         
-    
-    animation: spin 1s linear infinite;
-    
-    margin-bottom: 20px; 
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-#logo{
-    width: 125px; 
-    height: auto; 
-}
-
-.block{
+.block {
     width: 30px;
     height: 20px;
     background-color: transparent;
@@ -62,38 +119,60 @@ body{
     transition: background-color 1s ease;
 }
 
-.block.active{
+.block.active {
     background-color: red;
     border-color: red;
 }
 
-.block.error{
+.block.error {
     background-color: green;
     border-color: green;
 }
 
-#loading-text{
+#loading-text {
     color: white;
     font-size: 30px;
 }
 
-.error-details{
-    margin-top: 30px;
-    color: #aaa;
-    font-size: 14px;
-    line-height: 1.6;
+
+.video-grid {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px 40px 100px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 均分成三個直排 */
+    gap: 20px;
+    z-index: 10;
 }
 
-#message{
-    color: #eee;
-    font-size: 50px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    text-align: center;
+.video-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+}
 
+.video-title {
+    width: 85%;
+    height: 18px;
+    background-color: #333333;
+    border-radius: 4px;
+}
 
+.video-subtitle {
+    width: 50%;
+    height: 14px;
+    background-color: #262626;
+    border-radius: 4px;
+}
 
-
-
+.video-viewcount{
+    font-size: 16px;
+    color: rgba(226, 224, 224, 0.9);
+}
